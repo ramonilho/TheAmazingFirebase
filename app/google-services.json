@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "694716135678",
+    "firebase_url": "https://amazing-13mob.firebaseio.com",
+    "project_id": "amazing-13mob",
+    "storage_bucket": "amazing-13mob.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694716135678:android:1c2d049cdc7eaba6",
+        "android_client_info": {
+          "package_name": "br.com.ramonilho.theamazingfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "694716135678-ei3pgokisknr288umvdfn1pi3dpkpc28.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKRcxqGcPDUodpalUkJ9g5KMwRtY0V_fg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
