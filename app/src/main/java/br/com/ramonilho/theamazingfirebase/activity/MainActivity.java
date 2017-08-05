@@ -4,8 +4,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
+import com.google.android.gms.tasks.RuntimeExecutionException;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
@@ -25,10 +27,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Crashlytics
-        Fabric.with(this, new Crashlytics());
-        Crashlytics.setUserName("13MobTestUser");
-
         // Prints device token
         String token = FirebaseInstanceId.getInstance().getToken();
         Log.d(TAG, "Refreshed token: "+token);
@@ -43,11 +41,12 @@ public class MainActivity extends AppCompatActivity {
         Bundle params = new Bundle();
         params.putString("NAME", "Ramon");
         mFirebaseAnalytics.logEvent("clickMe", params);
+
+        Toast.makeText(this, "Click me event sent to Cloud", Toast.LENGTH_LONG).show();
     }
 
     public void crashApp(View v) {
-//        mFirebaseAnalytics.logEvent("crashApp", null);
-        int i = 1 / 0;
+        throw new IllegalStateException();
     }
 
 }
