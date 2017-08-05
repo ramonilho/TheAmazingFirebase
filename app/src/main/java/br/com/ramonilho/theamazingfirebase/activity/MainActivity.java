@@ -1,7 +1,9 @@
-package br.com.ramonilho.theamazingfirebase;
+package br.com.ramonilho.theamazingfirebase.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import br.com.ramonilho.theamazingfirebase.R;
 
 public class MainActivity extends AppCompatActivity {
 
