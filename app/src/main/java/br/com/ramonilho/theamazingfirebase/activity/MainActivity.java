@@ -5,11 +5,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.crashlytics.android.Crashlytics;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import br.com.ramonilho.theamazingfirebase.R;
+import io.fabric.sdk.android.Fabric;
+import io.fabric.sdk.android.services.common.Crash;
 
 import static com.google.android.gms.internal.zzs.TAG;
 
@@ -21,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Crashlytics
+        Fabric.with(this, new Crashlytics());
+        Crashlytics.setUserName("13MobTestUser");
 
         // Prints device token
         String token = FirebaseInstanceId.getInstance().getToken();
@@ -39,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void crashApp(View v) {
-        mFirebaseAnalytics.logEvent("crashApp", null);
-//        int i = 1 / 0;
+//        mFirebaseAnalytics.logEvent("crashApp", null);
+        int i = 1 / 0;
     }
 
 }
